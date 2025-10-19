@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NavBar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navLinks li {
+    margin-left: 20px;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.navLinks a:hover {
+    color: #00bcd4;
+}
+.navLinks a.active {
+    color: #ff5722; /* Active link color */
+}
+
+/* Additional styles can be added here if needed */
