@@ -3,6 +3,8 @@ import React from "react";
 import { Navbar } from "../components/navBar.jsx";
 
 export const HomePage = () => {
+  const imageBasePath = process.env.PUBLIC_URL ?? "";
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.35),_transparent_60%),_radial-gradient(circle_at_bottom,_rgba(236,72,153,0.3),_transparent_65%)]" />
@@ -54,7 +56,7 @@ export const HomePage = () => {
             <div className="relative">
               <div className="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur-xl">
                 <img
-                  src="/images/room-1336497_1280.jpg"
+                  src={`${imageBasePath}/images/room-1336497_1280.jpg`}
                   alt="Curated living room"
                   className="h-72 w-full rounded-2xl object-cover"
                 />
@@ -169,18 +171,18 @@ export const HomePage = () => {
           <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr]">
             <div className="grid gap-6 sm:grid-cols-2">
               <img
-                src="/images/da-guojing-6888603_1280.jpg"
+                src={`${imageBasePath}/images/room.jpg`}
                 alt="Living room inspiration"
                 className="h-64 w-full rounded-3xl border border-white/10 object-cover shadow-xl sm:h-full"
               />
               <div className="grid gap-6">
                 <img
-                  src="/images/dummy-6152641_1280.jpg"
+                  src={`${imageBasePath}/images/dummy-6152641_1280.jpg`}
                   alt="Workspace inspiration"
                   className="h-48 w-full rounded-3xl border border-white/10 object-cover shadow-xl"
                 />
                 <img
-                  src="/images/room-1336497_1280.jpg"
+                  src={`${imageBasePath}/images/room-1336497_1280.jpg`}
                   alt="Bedroom inspiration"
                   className="h-48 w-full rounded-3xl border border-white/10 object-cover shadow-xl"
                 />

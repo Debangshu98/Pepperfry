@@ -1,12 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../styles/navBar.css";
 import { useAuth } from "../pages/authContext";
 
 export const Navbar = () => {
   const { handleLogout } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    document.body.classList.add("page-transition-active");
+    const timeout = setTimeout(() => {
+      document.body.classList.remove("page-transition-active");
+    }, 400);
+    return () => {
+      clearTimeout(timeout);
+      document.body.classList.remove("page-transition-active");
+    };
+  }, [location.pathname]);
 
   const onLogoutClick = () => {
     handleLogout();
@@ -26,18 +37,18 @@ export const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link to="/about" className="hover:text-gray-300 transition duration-300">
-          About
-        </Link>
-      </li>
-      <li>
-        <Link to="/services" className="hover:text-gray-300 transition duration-300">
-          Services
+        <Link to="/products" className="hover:text-gray-300 transition duration-300">
+          Products
         </Link>
       </li>
       <li>
         <Link to="/contact" className="hover:text-gray-300 transition duration-300">
           Contact Us
+        </Link>
+      </li>
+      <li>
+        <Link to="/myCart" className="hover:text-gray-300 transition duration-300">
+          MyCart
         </Link>
       </li>
     </ul>

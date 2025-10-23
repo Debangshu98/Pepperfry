@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "./authContext";
 
 export const Login = () => {
-  const [username, setUsername] = useState("Dummy");
-  const [password, setPassword] = useState("123456");
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [animatePanels, setAnimatePanels] = useState(false);
@@ -13,6 +13,7 @@ export const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    localStorage.getItem("isLoggedIn") === "true" && navigate("/home");
     const timer = setTimeout(() => setAnimatePanels(true), 50);
     return () => clearTimeout(timer);
   }, []);
