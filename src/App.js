@@ -6,9 +6,9 @@ import Contacts from "./pages/contacts.jsx";
 import { Login } from "./pages/login.jsx";
 import SignUp from "./pages/signUp.jsx";
 import { useState } from "react";
-import { store } from "./store.js";
-import { Provider } from "react-redux";
 import Cart from "./pages/cart.jsx";
+import PaymentMode from "./pages/paymentMode.jsx";
+import AddressPage from "./pages/addressPage.jsx";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -28,6 +28,8 @@ function App() {
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/contact" element={<Contacts />} />
             <Route path="/myCart" element={<Cart />} />
+            <Route path="/PaymentMode" element={<PaymentMode />} />
+            <Route path="/AddressPage" element={<AddressPage />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </>

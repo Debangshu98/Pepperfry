@@ -2,8 +2,10 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, clearCart } from "../components/cartSlice.jsx";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
 
@@ -176,6 +178,7 @@ const Cart = () => {
                 <button
                   type="button"
                   className="w-full rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-400/30 transition hover:-translate-y-0.5 hover:bg-emerald-600"
+                  onClick={() => navigate('/AddressPage')}
                 >
                   Proceed to Checkout
                 </button>
